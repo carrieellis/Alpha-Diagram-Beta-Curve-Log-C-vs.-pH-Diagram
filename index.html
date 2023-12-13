@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Diagram</title>
+</head>
+<body>
+    <h1>Alpha Diagram, Beta Curve, and Log C vs. pH Diagram Generator</h1>
+    <form method="post" action="/">
+           <h2>Monoprotic System</h2>
+            <label for="monoprotic_concentration">Concentration:</label>
+            <input type="number" name="monoprotic_concentration" step="any" required>
+            <label for="monoprotic_pka">pKa:</label>
+            <input type="number" name="monoprotic_pka" step="any" required>
+            <button type="submit">Generate</button>
+        </form>
+
+    <form method="post" action="/">
+            <h2>Diprotic System</h2>
+            <label for="diprotic_concentration">Concentration:</label>
+            <input type="number" name="diprotic_concentration" step="any" required>
+            <label for="diprotic_pka1">pKa1:</label>
+            <input type="number" name="diprotic_pka1" step="any" required>
+            <label for="diprotic_pka2">pKa2:</label>
+            <input type="number" name="diprotic_pka2" step="any" required>
+            <button type="submit">Generate</button>
+        </form>
+
+    {% if img_base64 %}
+        <h2>Alpha Diagram</h2>
+        <img src="data:image/png;base64,{{ img_base64 }}" alt="Alpha Diagram">
+    {% endif %}
+</body>
+</html>
+
+
